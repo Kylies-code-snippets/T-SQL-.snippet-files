@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>NewProcedure</Title>  
+<Shortcut></Shortcut>  
+<Description>Create a new SQL procedure</Description>  
+<Author>Kylie Ison</Author>  
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ProcedureCode</ID>  
+<ToolTip>Code for the procedure</ToolTip>  
+<Default>ProcedureCode</Default> 
+</Literal>
+<Literal> 
+<ID>Databasename</ID>  
+<ToolTip>Enter a database name</ToolTip>  
+<Default>Databasename</Default>  
+</Literal>
+<Literal> 
+<ID>Procedurename</ID>  
+<ToolTip>Enter a unique procedure name</ToolTip>  
+<Default>Procedurename</Default>  
+</Literal>    
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+USE [$Databasename$]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [dbo].[$Procedurename$]
+	@parametername1 INT,
+	@parametername2 VARCHAR(10)
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON 
+
+$ProcedureCode$  
+
+SET NOCOUNT OFF
+
+END;  
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
