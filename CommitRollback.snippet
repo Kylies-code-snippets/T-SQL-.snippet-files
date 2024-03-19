@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>CommitRollback</Title>  
+<Shortcut></Shortcut>  
+<Description>Permanently save changes of a transaction or revert to the previous state before the transaction</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal> 
+<ID>Code1</ID>  
+<ToolTip>Code that might raise an error or exception</ToolTip>  
+<Default>Code1</Default>  
+</Literal>
+<Literal> 
+<ID>Code2</ID>  
+<ToolTip>Code that might raise an error or exception</ToolTip>  
+<Default>Code2</Default>  
+</Literal>
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+BEGIN TRY
+	
+	BEGIN TRANSACTION
+
+		$Code1$
+		$Code2$
+
+	COMMIT
+
+END TRY
+
+BEGIN CATCH
+
+	IF @@TRANCOUNT > 0
+        	ROLLBACK
+		SELECT 'Transaction aborted'	
+
+END CATCH
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
