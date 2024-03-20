@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>IfElse</Title>  
+<Shortcut></Shortcut>  
+<Description>Performs sections of code based on specified conditions</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal> 
+<ID>ConditionCode1</ID>  
+<ToolTip>Specify the condition for the first block of code</ToolTip>  
+<Default>ConditionCode1</Default>  
+</Literal>
+<Literal> 
+<ID>ConditionCode2</ID>  
+<ToolTip>Specify the condition for the second block of code</ToolTip>  
+<Default>ConditionCode2</Default>  
+</Literal>
+<Literal> 
+<ID>Code1</ID>  
+<ToolTip>Code that will execute if condition1 is true</ToolTip>  
+<Default>Code1</Default>  
+</Literal>
+<Literal>
+<ID>Code2</ID>  
+<ToolTip>Code that will execute if condition2 is true</ToolTip>  
+<Default>Code2</Default>  
+</Literal> 
+<Literal>
+<ID>Code3</ID>  
+<ToolTip>Code that will execute if other conditions are false</ToolTip>  
+<Default>Code3</Default>  
+</Literal>    
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+IF $ConditionCode1$
+
+	BEGIN
+
+		$Code1$
+
+	END
+
+ELSE IF $ConditionCode2$
+
+	BEGIN
+
+		$Code2$
+
+	END
+
+ELSE 
+
+	BEGIN
+
+		$Code3$
+
+	END
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
