@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>UpdateSubQuery</Title>  
+<Shortcut></Shortcut>  
+<Description>Update a column in a table by using a sum from another table</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1a</ID>  
+<ToolTip>Column name to join</ToolTip>  
+<Default>ColumnName1a</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName1b</ID>  
+<ToolTip>Column name to update</ToolTip>  
+<Default>ColumnName1b</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2a</ID>  
+<ToolTip>Column name to group by</ToolTip>  
+<Default>ColumnName2a</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2b</ID>  
+<ToolTip>Column name that is summed</ToolTip>  
+<Default>ColumnName2b</Default> 
+</Literal>
+<Literal> 
+<ID>TableName1</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>TableName1</Default>  
+</Literal> 
+<Literal> 
+<ID>TableName2</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>TableName2</Default>  
+</Literal>   
+</Declarations>  
+<Code Language="SQL"><![CDATA[
+UPDATE a
+SET $ColumnName1b$ = b.sum
+FROM $TableName1$ as a
+INNER JOIN
+	(SELECT $ColumnName2a$, SUM($ColumnName2b$) sum
+	 FROM $TableName2$
+	 GROUP BY $ColumnName2a$
+	) b
+ON b.$ColumnName2a$ = a.$ColumnName1a$
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
