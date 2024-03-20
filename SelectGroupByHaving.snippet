@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectGroupByHaving</Title>  
+<Shortcut></Shortcut>  
+<Description>Groups records by an aggregate functions and select them based on a comparison operator and value</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name to group by</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2</ID>  
+<ToolTip>Column name to apply to aggregatefunction to</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal>  
+<ID>AggregateFunction</ID>  
+<ToolTip>Pick one the aggregate functions ie SUM, COUNT, AVG, MIN, MAX</ToolTip>  
+<Default>AggregateFunction</Default> 
+</Literal>
+<Literal> 
+<ID>TableName</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>TableName</Default>  
+</Literal>
+<Literal> 
+<ID>Operator</ID>  
+<ToolTip>Enter a comparison operator</ToolTip>  
+<Default>Operator</Default>  
+</Literal>
+<Literal> 
+<ID>Value</ID>  
+<ToolTip>Enter a value to compare to</ToolTip>  
+<Default>Value</Default>  
+</Literal>   
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT $ColumnName1$, $AggregateFunction$($ColumnName2$)
+FROM $TableName$
+GROUP BY $ColumnName1$
+HAVING $AggregateFunction$($ColumnName2$) $Operator$ $Value$
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
