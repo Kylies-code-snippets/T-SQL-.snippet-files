@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>TryCatch</Title>  
+<Shortcut></Shortcut>  
+<Description>The TRY/CATCH construct allows you to gracefully handle errors</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal> 
+<ID>Code</ID>  
+<ToolTip>Code that might raise an error or exception</ToolTip>  
+<Default>Code</Default>  
+</Literal> 
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+BEGIN TRY
+
+	$Code$
+
+END TRY
+
+BEGIN CATCH
+
+SELECT 
+	'Error in procedure',
+	ERROR_NUMBER() AS ErrorNumber ,
+	ERROR_MESSAGE() AS ErrorMessage
+
+END CATCH
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
