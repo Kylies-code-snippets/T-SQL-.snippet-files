@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectRowNumberPartitionBy</Title>  
+<Shortcut></Shortcut>  
+<Description>Select, order and assign order numbers by partitions</Description>  
+<Author>Kylie Ison</Author>  
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name to partition by</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2</ID>  
+<ToolTip>Column name to partition by</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName3</ID>  
+<ToolTip>Column name to order by</ToolTip>  
+<Default>ColumnName3</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName4</ID>  
+<ToolTip>Column name to select</ToolTip>  
+<Default>ColumnName4</Default> 
+</Literal>
+<Literal> 
+<ID>TableName</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>TableName</Default>  
+</Literal>
+<Literal> 
+<ID>Code</ID>  
+<ToolTip>Enter code for where clause</ToolTip>  
+<Default>Code</Default>  
+</Literal>    
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT row_number() OVER(PARTITION BY $ColumnName1$, $ColumnName2$
+ORDER BY $ColumnName3$) AS 'Rank',
+$ColumnName1$,
+$ColumnName2$,
+$ColumnName3$,
+$ColumnName4$
+FROM $TableName$
+WHERE $Code$
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
