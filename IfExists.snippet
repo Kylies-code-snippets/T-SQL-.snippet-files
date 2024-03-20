@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>IfExists</Title>  
+<Shortcut></Shortcut>  
+<Description>Performs a block of code if the inner query returns one or more rows</Description>  
+<Author>Kylie Ison</Author>    
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal> 
+<ID>QueryCode1</ID>  
+<ToolTip>Specify the query for the first block of code to execute</ToolTip>  
+<Default>QueryCode1</Default>  
+</Literal>
+<Literal> 
+<ID>Code1</ID>  
+<ToolTip>Code that will execute if QueryCode1 returns one of more rows</ToolTip>  
+<Default>Code1</Default>  
+</Literal>
+<Literal>
+<ID>Code2</ID>  
+<ToolTip>Code that will execute if QueryCode1 returns nothing</ToolTip>  
+<Default>Code2</Default>  
+</Literal>   
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+IF EXISTS ($QueryCode1$)
+
+	BEGIN
+
+		$Code1$
+
+	END
+
+ELSE 
+
+	BEGIN
+
+		$Code2$
+
+	END
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
