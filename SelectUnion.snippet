@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectUnion</Title>  
+<Shortcut></Shortcut>  
+<Description>Displays the results of two or more queries as one result set</Description>  
+<Author>Kylie Ison</Author>  
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name to select</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2</ID>  
+<ToolTip>Column name to select</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal> 
+<ID>Tablename1</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>Tablename1</Default>  
+</Literal>  
+<Literal> 
+<ID>Tablename2</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>Tablename2</Default>  
+</Literal> 
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT $ColumnName1$
+FROM $Tablename1$
+
+UNION
+
+SELECT $ColumnName2$
+FROM $Tablename2$
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
