@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectPivot</Title>  
+<Shortcut></Shortcut>  
+<Description>Convert rows into columns</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>
+<Literal>  
+<ID>Row1</ID>  
+<ToolTip>Row1 to pivot</ToolTip>  
+<Default>Row1</Default> 
+</Literal>
+<Literal>
+<ID>Row2</ID>  
+<ToolTip>Row2 to pivot</ToolTip>  
+<Default>Row2</Default> 
+</Literal>
+<Literal>
+<ID>Row3</ID>  
+<ToolTip>Row3 to pivot</ToolTip>  
+<Default>Row3</Default> 
+</Literal> 
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name of rows</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2</ID>  
+<ToolTip>Column name to sum</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal> 
+<ID>TableName</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>TableName</Default>  
+</Literal>
+<Literal> 
+<ID>Code</ID>  
+<ToolTip>Enter code for where clause</ToolTip>  
+<Default>Code</Default>  
+</Literal>    
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT 'Sum' as Totals,
+[$Row1$], [$Row2$], [$Row3$]
+FROM
+(SELECT $ColumnName1$, $ColumnName2$
+FROM $TableName$
+WHERE $Code$
+) AS sourcetable
+PIVOT
+(sum($ColumnName2$)
+FOR $ColumnName1$ in ([$Row1$], [$Row2$], [$Row3$])
+) AS pivottable
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
