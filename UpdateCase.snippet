@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>UpdateCase</Title>  
+<Shortcut></Shortcut>  
+<Description>Update a column in a table by using case statement</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name to update</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2</ID>  
+<ToolTip>Column name in case statement</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal> 
+<ID>TableName</ID>  
+<ToolTip>Enter a table name</ToolTip>
+<Default>TableName</Default> 
+</Literal>
+<Literal> 
+<ID>Value1</ID>  
+<ToolTip>Enter a value</ToolTip>   
+<Default>Value1</Default>  
+</Literal>
+<Literal> 
+<ID>Value2</ID>  
+<ToolTip>Enter a value</ToolTip>   
+<Default>Value2</Default>  
+</Literal> 
+<Literal> 
+<ID>Value3</ID>  
+<ToolTip>Enter a value</ToolTip>   
+<Default>Value3</Default>  
+</Literal>  
+</Declarations>  
+<Code Language="SQL"><![CDATA[
+UPDATE $TableName$
+SET $ColumnName1$ = CASE WHEN $ColumnName2$ = $Value1$ THEN $Value2$
+                         ELSE $Value3$ END
+
+]]> 
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
