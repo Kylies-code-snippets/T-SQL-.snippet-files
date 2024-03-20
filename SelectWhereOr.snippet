@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectWhereOr</Title>  
+<Shortcut></Shortcut>  
+<Description>Select rows from a table if the rows meet one of the conditions</Description>  
+<Author>Kylie Ison</Author>  
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName</ID>  
+<ToolTip>Column name to select</ToolTip>  
+<Default>ColumnName</Default> 
+</Literal>
+<Literal> 
+<ID>TableName</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>TableName</Default>  
+</Literal>
+<Literal> 
+<ID>ConditionCode1</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>ConditionCode1</Default>  
+</Literal>    
+<Literal> 
+<ID>ConditionCode2</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>ConditionCode2</Default>  
+</Literal> 
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT $ColumnName$
+FROM   $TableName$
+WHERE  $ConditionCode1$ OR
+       $ConditionCode2$
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
