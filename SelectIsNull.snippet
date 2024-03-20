@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectIsNull</Title>  
+<Shortcut></Shortcut>  
+<Description>Specifies a value to substitute if the column is null</Description>  
+<Author>Kylie Ison</Author>  
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName</ID>  
+<ToolTip>Column name to select</ToolTip>  
+<Default>ColumnName</Default> 
+</Literal>
+<Literal> 
+<ID>Value</ID>  
+<ToolTip>Value to substitute if value is null</ToolTip>  
+<Default>Value</Default>  
+</Literal>   
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT ISNULL($ColumnName$,$Value$)
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
