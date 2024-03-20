@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>UpdateJoin</Title>  
+<Shortcut></Shortcut>  
+<Description>Update a column in a table using a column from another table</Description>  
+<Author>Kylie Ison</Author>    
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1a</ID>  
+<ToolTip>Column name to update</ToolTip>  
+<Default>ColumnName1a</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2a</ID>  
+<ToolTip>Column name to update with</ToolTip>  
+<Default>ColumnName2a</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName1b</ID>  
+<ToolTip>Column name from table1 to join tables</ToolTip>  
+<Default>ColumnName1b</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2b</ID>  
+<ToolTip>Column name from table2 to join tables</ToolTip>  
+<Default>ColumnName2b</Default> 
+</Literal>  
+<Literal> 
+<ID>TableName1</ID>  
+<ToolTip>Table to update</ToolTip>
+<Default>TableName1</Default> 
+</Literal>
+<Literal>
+<ID>TableName2</ID>  
+<ToolTip>Table to join</ToolTip>
+<Default>TableName2</Default> 
+</Literal>
+</Declarations>  
+<Code Language="SQL"><![CDATA[
+UPDATE a
+SET a.$ColumnName1a$ = b.$ColumnName2a$
+FROM $TableName1$ a
+INNER JOIN $TableName2$ b
+ON a.$ColumnName1b$ = b.$ColumnName2b$
+]]> 
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
