@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>InsertSelect</Title>  
+<Shortcut></Shortcut>  
+<Description>Inserts rows into a table using a select statement from another table</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>
+<Literal> 
+<ID>TableName1</ID>  
+<ToolTip>Enter the table name into which rows will be inserted</ToolTip>  
+<Default>TableName1</Default>  
+</Literal>
+<Literal> 
+<ID>TableName2</ID>  
+<ToolTip>Enter the table name from which rows will be selected</ToolTip>  
+<Default>TableName2</Default>  
+</Literal>   
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name to insert value</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>
+<ID>ColumnName2</ID>  
+<ToolTip>Column name to insert value</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal>
+<ID>ColumnName3</ID>  
+<ToolTip>Column name to select value</ToolTip>  
+<Default>ColumnName3</Default> 
+</Literal>
+<Literal>
+<ID>ColumnName4</ID>  
+<ToolTip>Column name to select value</ToolTip>  
+<Default>ColumnName4</Default> 
+</Literal>
+<Literal>
+<ID>Code</ID>  
+<ToolTip>Enter code for the where condition</ToolTip>  
+<Default>Code</Default> 
+</Literal>
+</Declarations>  
+<Code Language="SQL"><![CDATA[ 
+INSERT INTO $TableName1$ 
+(
+	$ColumnName1$, 
+	$ColumnName2$
+)
+SELECT
+	$ColumnName3$, 
+	$ColumnName4$
+FROM    $TableName2$
+WHERE   $Code$
+
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
