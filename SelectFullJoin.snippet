@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectFullJoin</Title>  
+<Shortcut></Shortcut>  
+<Description>Returns all records in the specified tables. It includes NULL for any non matching records</Description>  
+<Author>Kylie Ison</Author>    
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name to select</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2</ID>  
+<ToolTip>Column name to select</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName3</ID>  
+<ToolTip>Column name to join from first table</ToolTip>  
+<Default>ColumnName3</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName4</ID>  
+<ToolTip>Column name to join from second table</ToolTip>  
+<Default>ColumnName4</Default> 
+</Literal>
+<Literal> 
+<ID>TableName1</ID>  
+<ToolTip>Enter the first table name</ToolTip>  
+<Default>TableName1</Default>  
+</Literal>
+<Literal> 
+<ID>TableName2</ID>  
+<ToolTip>Enter the second table name</ToolTip>  
+<Default>TableName2</Default>  
+</Literal>   
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT a.$ColumnName1$, b.$ColumnName2$
+FROM $TableName1$ a
+FULL JOIN $TableName2$ b
+ON a.$ColumnName3$ = b.$ColumnName4$
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
