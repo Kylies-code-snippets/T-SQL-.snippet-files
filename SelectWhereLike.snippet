@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>SelectWhereLike</Title>  
+<Shortcut></Shortcut>  
+<Description>Search for a specified pattern in a column</Description>  
+<Author>Kylie Ison</Author>  
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName1</ID>  
+<ToolTip>Column name to display</ToolTip>  
+<Default>ColumnName1</Default> 
+</Literal>
+<Literal>  
+<ID>ColumnName2</ID>  
+<ToolTip>Column name to select on</ToolTip>  
+<Default>ColumnName2</Default> 
+</Literal>
+<Literal> 
+<ID>TableName</ID>  
+<ToolTip>Enter a table name</ToolTip>  
+<Default>TableName</Default>  
+</Literal>
+<Literal> 
+<ID>SearchPattern</ID>  
+<ToolTip>Enter a search pattern including % and _ wildcards</ToolTip>  
+<Default>SearchPattern</Default>  
+</Literal>    
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+SELECT $ColumnName1$
+FROM   $TableName$
+WHERE  $ColumnName2$ like '$SearchPattern$'
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
