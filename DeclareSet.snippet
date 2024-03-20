@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>DeclareSet</Title>  
+<Shortcut></Shortcut>  
+<Description>Declare variables and assign values to them</Description>  
+<Author>Kylie Ison</Author>    
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>Variable1</ID>  
+<ToolTip>Variable of type Integer</ToolTip>  
+<Default>Variable1</Default> 
+</Literal>
+<Literal> 
+<ID>Variable2</ID>  
+<ToolTip>Variable of type Decimal</ToolTip>  
+<Default>Variable2</Default>  
+</Literal>
+<Literal>  
+<ID>Variable3</ID>  
+<ToolTip>Variable of type Char</ToolTip>  
+<Default>Variable3</Default> 
+</Literal>
+<Literal> 
+<ID>Variable4</ID>  
+<ToolTip>Variable of type NChar</ToolTip>  
+<Default>Variable4</Default>  
+</Literal>
+<Literal> 
+<ID>Variable5</ID>  
+<ToolTip>Variable of type Varchar</ToolTip>  
+<Default>Variable5</Default>  
+</Literal>
+<Literal> 
+<ID>Variable6</ID>  
+<ToolTip>Variable of type NVarchar</ToolTip>  
+<Default>Variable6</Default>  
+</Literal>
+<Literal>
+<ID>Variable7</ID>  
+<ToolTip>Variable of type Date</ToolTip>  
+<Default>Variable7</Default>  
+</Literal>
+<Literal>
+<ID>Variable8</ID>  
+<ToolTip>Variable of type DateTime</ToolTip>  
+<Default>Variable8</Default>  
+</Literal>
+<Literal> 
+<ID>ColumnName1</ID>  
+<ToolTip>Single column from table of type Varchar</ToolTip>  
+<Default>ColumnName1</Default>  
+</Literal>
+<Literal> 
+<ID>ColumnName2</ID>  
+<ToolTip>Single column from table of type NVarchar</ToolTip>  
+<Default>ColumnName2</Default>  
+</Literal>
+<Literal>
+<ID>ColumnName3</ID>  
+<ToolTip>Single column from function</ToolTip>  
+<Default>ColumnName3</Default>  
+</Literal>
+<Literal> 
+<ID>FunctionName</ID>  
+<ToolTip>Name of function</ToolTip>  
+<Default>FunctionName</Default>  
+</Literal>
+<Literal> 
+<ID>TableName1</ID>  
+<ToolTip>Name of table</ToolTip>  
+<Default>TableName1</Default>  
+</Literal>
+<Literal> 
+<ID>TableName2</ID>  
+<ToolTip>Name of table</ToolTip>  
+<Default>TableName2</Default>  
+</Literal>
+<Literal> 
+<ID>code1</ID>  
+<ToolTip>Code for where clause</ToolTip>  
+<Default>code1</Default>  
+</Literal>
+<Literal> 
+<ID>code2</ID>  
+<ToolTip>Code for where clause</ToolTip>  
+<Default>code2</Default>  
+</Literal>    
+</Declarations>  
+<Code Language="SQL"><![CDATA[  
+DECLARE @$Variable1$ AS INT
+DECLARE @$Variable2$ AS DECIMAL(5,2)
+DECLARE @$Variable3$ AS CHAR(5)
+DECLARE @$Variable4$ AS NCHAR(6)
+DECLARE @$Variable5$ AS VARCHAR(10)
+DECLARE @$Variable6$ AS NVARCHAR(10)
+DECLARE @$Variable7$ AS DATE
+DECLARE @$Variable8$ AS DATETIME
+
+SET @$Variable1$ = 1
+SET @$Variable2$ = 11.11 + @$Variable1$
+SET @$Variable3$ = 'Hello'
+SET @$Variable4$ = 'Hello©'
+SET @$Variable5$ = (SELECT $ColumnName1$ FROM $TableName1$ WHERE $code1$)
+SET @$Variable6$ = (SELECT $ColumnName2$ FROM $TableName2$ WHERE $code2$)
+SET @$Variable7$ = (SELECT $ColumnName3$ FROM $FunctionName$(parameter1, parameter2))
+SET @$Variable8$ = GETDATE()
+
+SELECT @$Variable1$
+SELECT @$Variable2$
+SELECT @$Variable3$
+SELECT @$Variable4$
+SELECT @$Variable5$
+SELECT @$Variable6$
+SELECT @$Variable7$
+SELECT @$Variable8$
+]]>  
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
