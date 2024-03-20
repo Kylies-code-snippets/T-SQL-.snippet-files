@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+<_locDefinition xmlns="urn:locstudio">  
+    <_locDefault _loc="locNone" />  
+    <_locTag _loc="locData">Title</_locTag>  
+    <_locTag _loc="locData">Description</_locTag>  
+    <_locTag _loc="locData">Author</_locTag>  
+    <_locTag _loc="locData">ToolTip</_locTag>  
+   <_locTag _loc="locData">Default</_locTag>  
+</_locDefinition>  
+<CodeSnippet Format="1.0.0">  
+<Header>  
+<Title>UpdateUsingFunction</Title>  
+<Shortcut></Shortcut>  
+<Description>Update a column in a table by using a function</Description>  
+<Author>Kylie Ison</Author>   
+</Header>  
+<Snippet>  
+<Declarations>  
+<Literal>  
+<ID>ColumnName</ID>  
+<ToolTip>Column name to update</ToolTip>  
+<Default>ColumnName</Default> 
+</Literal>  
+<Literal> 
+<ID>TableName</ID>  
+<ToolTip>Enter a table name</ToolTip>
+<Default>TableName</Default> 
+</Literal>
+<Literal> 
+<ID>FunctionName</ID>  
+<ToolTip>Enter a function name</ToolTip>   
+<Default>FunctionName</Default>  
+</Literal>
+</Declarations>  
+<Code Language="SQL"><![CDATA[
+UPDATE $TableName$
+SET $ColumnName$ = dbo.$FunctionName$(parameter1, parameter2)
+]]> 
+</Code>  
+</Snippet>  
+</CodeSnippet>  
+</CodeSnippets>
